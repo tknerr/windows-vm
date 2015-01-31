@@ -5,10 +5,10 @@
             <SetupUILanguage>
                 <UILanguage>en-US</UILanguage>
             </SetupUILanguage>
-            <InputLocale>en-US</InputLocale>
+            <InputLocale>de-DE</InputLocale>
             <SystemLocale>en-US</SystemLocale>
             <UILanguage>en-US</UILanguage>
-            <UserLocale>en-US</UserLocale>
+            <UserLocale>de-DE</UserLocale>
         </component>
         <component name="Microsoft-Windows-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
             <ImageInstall>
@@ -16,7 +16,7 @@
                     <InstallFrom>
                         <MetaData wcm:action="add">
                             <Key>/IMAGE/NAME</Key>
-                            <Value>Windows 7 PROFESSIONAL</Value>
+                            <Value>WINDOWS 7 PROFESSIONAL</Value>
                         </MetaData>
                     </InstallFrom>
                     <InstallTo>
@@ -25,9 +25,6 @@
                     </InstallTo>
                 </OSImage>
             </ImageInstall>
-            <UserData>
-                <AcceptEula>true</AcceptEula>
-            </UserData>
             <DiskConfiguration>
                 <Disk wcm:action="add">
                     <CreatePartitions>
@@ -52,6 +49,15 @@
                 </Disk>
                 <WillShowUI>OnError</WillShowUI>
             </DiskConfiguration>
+            <UserData>
+                <ProductKey>
+                    <WillShowUI>OnError</WillShowUI>
+                    <Key>FJ82H-XT6CR-J8D7P-XQJJ2-GPDD4</Key>
+                </ProductKey>
+                <AcceptEula>true</AcceptEula>
+                <FullName>Test</FullName>
+                <Organization>Test</Organization>
+            </UserData>
         </component>
     </settings>
     <settings pass="oobeSystem">
@@ -79,8 +85,11 @@
                 </Password>
             </AutoLogon>
             <OOBE>
+                <HideEULAPage>true</HideEULAPage>
                 <NetworkLocation>Work</NetworkLocation>
                 <ProtectYourPC>3</ProtectYourPC>
+                <SkipMachineOOBE>true</SkipMachineOOBE>
+                <SkipUserOOBE>true</SkipUserOOBE>
             </OOBE>
             <FirstLogonCommands>
                 <SynchronousCommand wcm:action="add">
@@ -95,7 +104,7 @@
     <settings pass="specialize">
         <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
             <ComputerName>*</ComputerName>
-            <TimeZone>Pacific Standard Time</TimeZone>
+            <TimeZone>Central Europe Standard Time</TimeZone>
         </component>
         <component name="Microsoft-Windows-IE-InternetExplorer" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
             <SearchScopes>
@@ -141,5 +150,4 @@
             <EnableLUA>false</EnableLUA>
         </component>
     </settings>
-    <cpi:offlineImage cpi:source="wim:c:/users/misheska/sources/win7pro/x64/install.wim#Windows 7 PROFESSIONAL" xmlns:cpi="urn:schemas-microsoft-com:cpi" />
 </unattend>
